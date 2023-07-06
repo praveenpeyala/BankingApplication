@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Bank Home</title>
+</head>
+<body>
+<style>
+html{
+ background-image: url('https://th.bing.com/th/id/OIP.re1N3pn8_Zdj9scFuAJ9ZwHaE7?w=284&h=189&c=7&o=5&pid=1.7');
+}
+</style>
+
+<div align="center">
+ <font  size="10" style=text-align:center;color:green;>ARJUNS FINANCIAL World</font>
+<br><br>
+<marquee><font  size="5" style=color:gold>Welcome to My BankingApplication</font></marquee>
+    <h1 style=color:brown>Account holders List</h1>
+    <a href="/new">Click here for new Account Registration</a>
+    <br/><br/>
+    <table  border="1" cellpadding="10">
+          <thead>
+            <tr>
+                <th style ="color:green">Customer ID</th>
+                <th style ="color:green">Name</th>
+                <th style ="color:green" >AccountType</th>
+                <th style ="color:green" >PhoneNumber</th>
+                <th  style ="color:green" >Address</th>
+                <th style ="color:green">Gender</th>
+                <th style ="color:green">AccountNumber</th>
+                <th style ="color:green" >Balance</th>
+            </tr>
+        </thead>
+       <tbody>
+            <tr th:each="customer : ${listCustomers}">
+            	<td th:text="${customer.id}">Customer ID</td>
+            	  <td th:text="${customer.name}">Name</td>
+            	    <td th:text="${customer.accounttype}">AccountType</td>
+                <td th:text="${customer.phoneNumber}">PhoneNumber</td>
+                  <td th:text="${customer.address}">Address</td>
+                <td th:text="${customer.gender}">Gender</td>
+            
+            	  <td th:text="${customer.accountNumber}">AccountNumber</td>
+               <td th:text="${customer.balance}">Balance</td>
+                <td>
+                	<a th:href="@{'/edit/' + ${customer.id}}">Edit</a>
+                	&nbsp;&nbsp;&nbsp;
+                	<a th:href="@{'/delete/' + ${customer.id}}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div> 
+</body>
+</html>

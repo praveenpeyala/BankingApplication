@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>registerationPage</title>
+</head>
+<body>
+<style>
+html{
+ background-image: url('https://th.bing.com/th/id/OIP.re1N3pn8_Zdj9scFuAJ9ZwHaE7?w=284&h=189&c=7&o=5&pid=1.7');
+}
+</style>
+ <div align="center">
+    <font  size="10" style=text-align:center;color:green;>ARJUNS FINANCIAL World</font>
+<br><br>
+<marquee><font  size="5" style=color:gold>Welcome to My BankingApplication</font></marquee>
+    <h1 style=color:brown>New Account Registration</h1>
+        <br />
+        <form action="#" th:action="@{/save}" th:object="${customer}"
+			method="post">
+        <table style="color:green;" border="3" cellpadding="10">
+                <tr>
+                    <td>AccountHolder Name:</td>
+                    <td><input type="text"  th:field="*{name}" /></td>
+           </tr>
+                <tr>
+                    <td>AccountType:</td>
+                    <td><input type="text"  th:field="*{accounttype}"  /></td>
+                </tr>
+                <tr>
+                    <td>Contact Number:</td>
+                    <td><input type="text" th:field="*{phoneNumber}" /></td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td><input type="text"  th:field="*{address}" /></td>
+                </tr>    
+                <tr>
+                    <td>Gender:</td>
+                    <td><input type="text"  th:field="*{gender}" /></td>
+                </tr>  
+                <tr>
+                    <td>AccountNumber:</td>
+                    <td><input type="text"  th:field="*{accountNumber}" /></td>
+                </tr>  
+                <tr>
+                    <td>AccountBalance:</td>
+                    <td><input type="text"  th:field="*{balance}" /></td>
+                </tr>         
+                                      
+                <tr >
+                    <td colspan="2"><button type="submit">Save</button>
+                 <input   type="reset" value="Reset" />
+                     </td>
+                </tr>
+          
+                 
+               
+                </table>
+        </form>
+    </div>
+</body>
+</html>
