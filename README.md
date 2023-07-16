@@ -13,3 +13,11 @@ sonar.java.target=1.7
 sonar.projectVersion=1.0
 sonar.sources=src/main/java
 sonar.java.binaries=.
+
+
+
+
+FROM eclipse-temurin:17-jdk-alpine
+VOLUME /tmp
+COPY target/*.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
