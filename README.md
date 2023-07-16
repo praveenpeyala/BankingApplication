@@ -1,8 +1,9 @@
 # BankingApplication
-server.portnumber = 2510
 
-Sonar Properties
----------------------------------------
+server.portnumber = 2510 <br />
+
+Sonar Properties <br />
+--------------------------------------- <br />
 sonar.host.url=http://3.109.199.80:9000/ <br />
 sonar.projectKey=siri <br />
 sonar.projectName=siri <br />
@@ -16,7 +17,7 @@ sonar.java.binaries=. <br />
 
 
 
--------------------------------------------DockerFile------------------------
+-------------------------------------------DockerFile------------------------ <br />
 FROM eclipse-temurin:17-jdk-alpine <br />
 MAINTAINER "Arjun DevOps World"  <br />
 VOLUME /tmp <br />
