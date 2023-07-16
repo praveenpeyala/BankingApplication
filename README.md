@@ -5,19 +5,20 @@ Sonar Properties
 ---------------------------------------
 sonar.host.url=http://3.109.199.80:9000/ <br />
 sonar.projectKey=siri <br />
-sonar.projectName=siri
-sonar.sourceEncoding=UTF-8
-sonar.language=java
-sonar.java.source=1.7
-sonar.java.target=1.7
-sonar.projectVersion=1.0
-sonar.sources=src/main/java
-sonar.java.binaries=.
+sonar.projectName=siri <br />
+sonar.sourceEncoding=UTF-8 <br />
+sonar.language=java <br />
+sonar.java.source=1.7 <br />
+sonar.java.target=1.7 <br />
+sonar.projectVersion=1.0 <br />
+sonar.sources=src/main/java <br />
+sonar.java.binaries=. <br />
 
 
 
-
-FROM eclipse-temurin:17-jdk-alpine
-VOLUME /tmp
-COPY target/*.jar app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+-------------------------------------------DockerFile------------------------
+FROM eclipse-temurin:17-jdk-alpine <br />
+MAINTAINER "Arjun DevOps World"  <br />
+VOLUME /tmp <br />
+ COPY target/*.jar BankingApplication.jar <br />
+ENTRYPOINT ["java","-jar","/BankingApplication.jar"]
