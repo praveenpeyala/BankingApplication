@@ -3,8 +3,8 @@ server.portnumber = 2510
 
 Sonar Properties
 ---------------------------------------
-sonar.host.url=http://3.109.199.80:9000/
-sonar.projectKey=siri
+sonar.host.url=http://3.109.199.80:9000/ <br />
+sonar.projectKey=siri <br />
 sonar.projectName=siri
 sonar.sourceEncoding=UTF-8
 sonar.language=java
