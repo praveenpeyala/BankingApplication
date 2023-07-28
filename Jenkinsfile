@@ -1,41 +1,40 @@
 pipeline {
     agent any
-  tools{
-    maven "mvn"
+  tools {
+    maven "Maven"
    }
     stages {
-        stage('GitCheckOut') {
+        stage('GIT-checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/RAMARJUN397/BankingApplication.git'
+                git branch: 'main', url: 'https://github.com/praveenpeyala/BankingApplication.git'
             }
         }
-        stage('Compilation') {
+        stage('Compile-source_code') {
             steps {
-                sh 'mvn compile'
+                sh 'mvn clean compile'
             }
         }
-        stage('UnitTesting') {
+        stage('Unit_testing-source_code') {
             steps {
                 sh 'mvn test'
             }
         }
-        stage('Continuous Integration') {
+        stage('Integration-source_code') {
             steps {
-                sh 'mvn clean install'
+                sh 'mvn install'
             }
         }
-        stage('Docker Build and Publish') {
+        stage('Docker-image_build_&_publish') {
             steps {
-               script{
-                   // This step should not normally be used in your script. Consult the inline help for details.
-                withDockerRegistry(credentialsId: 'DockerHub_Pipes', toolName: 'Docker',
-                url: 'https://index.docker.io/v1/') {
-                    sh "docker build -t ak397/arjunimage:latest ."
-                    sh "docker push ak397/arjunimage:latest"
-   
+                script{
+                    // This step should not normally be used in your script. Consult the inline help for details.
+                    withDockerRegistry(credentialsId: '5c62b3ad-192d-4d5d-b185-f5eedb3a7ce3', toolName: 'Docker', url: 'https://index.docker.io/v1/') 
+                        {
+                          sh 'docker build -t prvn369/bankapp-pipeline:latest .'
+                          sh 'docker push prvn369/bankapp-pipeline:latest'
+                        }
                     }
-               }
+                }
             }
         }
     }
-}
